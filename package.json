@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "gulp": "~3.8.10",
+    "gulp-browserify": "~0.5.0",
+    "http-server": "~0.7.4"
+  }
+}
