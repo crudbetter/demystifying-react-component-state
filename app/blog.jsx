@@ -1,22 +1,30 @@
 'use strict';
-var react = require('react');
+var React = require('react');
 
 var CategoryList = require('./categoryList.jsx');
 var ArticleList = require('./articleList.jsx');
 
-// TODO: add component validation, e.g. defaultCategoryId required
 
 function getBlogState(selectedCategoryId) {
-	// Faked data rather than implementing Flux stores etc.
-	// But if using Flux, might be:
-	/*
-		var allCategories = CategoryStore.getAll();
-		return {
-			allCategories: allCategories,
-			selectedCategoryId: selectedCategoryId,
-			selectedCategoryArticles: ArticleStore.getAllForCategoryId(selectedCategoryId)
-		};
-	*/
+	
+	var categories = [
+		{ id: 1, title: 'AngularJS' },
+		{ id: 2, title: 'React' }
+	];
+
+	var articles = [
+		{ id: 1, categoryId: 1, title: 'Managing Client Only State in AngularJS', author: 'M Godfrey' },
+		{ id: 2, categoryId: 1, title: 'The Best Way to Share Data Between AngularJS Controllers', author: 'M Godfrey' },
+		{ id: 3, categoryId: 2, title: 'Demystifying React Component State', author: 'M Godfrey' }
+	];
+
+	return {
+		allCategories: categories,
+		selectedCategoryId: selectedCategoryId,
+		selectedCategoryArticles: articles.filter(function(article) {
+			return article.categoryId == selectedCategoryId
+		})
+	}
 };
 
 var Blog = React.createClass({
@@ -37,4 +45,4 @@ var Blog = React.createClass({
 	}
 });
 
-module.exports = Blog;
+module.exports = Blog;	

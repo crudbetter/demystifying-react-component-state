@@ -8,12 +8,14 @@ var CategoryList = React.createClass({
 		};
 	},
 	render: function() {
+		var self = this;
+
 		return (
 			<ul>
-				{this.props.categories.map(function(category) {
+				{self.props.categories.map(function(category) {
 					return (
 						<li onClick={self.props.onCategorySelected.bind(null, category.id)}>
-							category.title
+							{category.title}
 						</li>
 					);
 				})}
