@@ -1,11 +1,14 @@
 {
   "devDependencies": {
-    "http-server": "~0.7.4",
     "reactify": "~0.17.1",
-    "react": "~0.12.1"
+    "react": "~0.12.1",
+    "socket.io-client": "~1.2.1"
   },
   "scripts": {
-  	"prestart": "browserify -t reactify app/app.js -o app/bundle.js --debug",
-    "start": "http-server -a localhost -p 8000 -c-1"
+    "prestart": "browserify -t reactify browser/app.js -o browser/bundle.js --debug",
+    "start": "node server/app.js"
+  },
+  "dependencies": {
+    "socket.io": "~1.2.1"
   }
 }

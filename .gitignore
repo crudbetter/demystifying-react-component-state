@@ -1,3 +1,4 @@
 /node_modules
 *~
-/app/bundle.js
+/browser/bundle.js
+.DS_Store
