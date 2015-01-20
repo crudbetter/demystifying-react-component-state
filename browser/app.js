@@ -5,7 +5,7 @@ var socket = require('socket.io-client')('http://localhost:8000/');
 var Blog = require('./blog.jsx');
 
 var renderedBlog = React.render(Blog({
-	initialCategoryId: 1,
+	initialSelectedCategoryId: 1,
 	categories: [
 		{ id: 1, title: 'AngularJS' },
 		{ id: 2, title: 'React' }

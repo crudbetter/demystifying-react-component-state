@@ -7,7 +7,7 @@ var ArticleList = require('./articleList.jsx');
 var Blog = React.createClass({
 	getInitialState: function() {
 		return {
-			selectedCategoryId: this.props.initialCategoryId,
+			selectedCategoryId: this.props.initialSelectedCategoryId,
 			articles: this.props.initialArticles
 		}
 	},
