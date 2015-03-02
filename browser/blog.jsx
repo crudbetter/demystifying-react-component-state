@@ -7,20 +7,18 @@ var ArticleList = require('./articleList.jsx');
 var Blog = React.createClass({
 	getInitialState: function() {
 		return {
-			selectedCategoryId: this.props.initialSelectedCategoryId,
-			articles: this.props.initialArticles
-		}
+			articles: this.props.initialArticles,
+			selectedCategoryId: this.props.initialCategoryId
+		};
 	},
 	render: function() {
-		var self = this;
-
-		var selectedCategoryArticles = self.state.articles.filter(function(article) {
-			return article.categoryId == self.state.selectedCategoryId;
-		});
+		var selectedCategoryArticles = this.state.articles.filter(function(article) {
+			return article.categoryId == this.state.selectedCategoryId;
+		}, this);
 
 		return (
 			<div>
-				<CategoryList categories={self.props.categories} onCategorySelected={self._onCategorySelected} />
+				<CategoryList categories={this.props.categories} onCategorySelected={this._onCategorySelected} />
 				<ArticleList articles={selectedCategoryArticles} />
 			</div>
 		);
@@ -29,9 +27,12 @@ var Blog = React.createClass({
 	_onCategorySelected: function(categoryId) {
 		this.setState({ selectedCategoryId: categoryId });
 	},
-	_onArticlePublished: function(article) {
-		this.setState({ articles: this.state.articles.concat([article]) });
-	}
+	_onArticlePublished: function(article) {  
+		// we should treat state as immutable  
+		// create a new array by concatenating new and old contents  
+		// http://stackoverflow.com/a/26254086/305844  
+		this.setState({ articles: this.state.articles.concat([article]) });  
+	} 
 });
 
 module.exports = Blog;	

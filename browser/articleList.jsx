@@ -7,7 +7,7 @@ var ArticleList = React.createClass({
 			<ul>
 				{this.props.articles.map(function(article) {
 					return (
-						<li>{article.title + ' by ' + article.author}</li>
+						<li key={article.id}>{article.title + ' by ' + article.author}</li>
 					);
 				})}
 			</ul>

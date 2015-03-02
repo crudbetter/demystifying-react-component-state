@@ -2,23 +2,16 @@
 var React = require('react');
 
 var CategoryList = React.createClass({
-	getInitialState: function() {
-		return {
-			categories: this.props.categories
-		};
-	},
 	render: function() {
-		var self = this;
-
 		return (
 			<ul>
-				{self.props.categories.map(function(category) {
+				{this.props.categories.map(function(category) {
 					return (
-						<li onClick={self.props.onCategorySelected.bind(null, category.id)}>
+						<li key={category.id} onClick={this.props.onCategorySelected.bind(null, category.id)}>
 							{category.title}
 						</li>
 					);
-				})}
+				}, this)}
 			</ul>
 		);
 	}
