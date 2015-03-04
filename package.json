@@ -1,12 +1,18 @@
 {
-  "scripts": {
-    "prestart": "browserify -t reactify browser/app.js -o browser/bundle.js --debug",
-    "start": "node server/app.js"
-  },
+  "author": "https://github.com/crudbetter",
+  "name": "demystifying-react-component-state",
+  "version": "0.0.0",
+  "description": "React component state explained by example",
+  "repository": "https://github.com/crudbetter/demystifying-react-component-state",
+  "license": "MIT",
   "dependencies": {
     "reactify": "~0.17.1",
     "react": "~0.12.1",
     "socket.io-client": "~1.2.1",
     "socket.io": "~1.2.1"
+  },
+  "scripts": {
+    "prestart": "browserify -t reactify browser/app.jsx -o browser/bundle.js --debug",
+    "start": "node server/app.js"
   }
 }
