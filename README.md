@@ -1,7 +1,7 @@
 demystifying-react-component-state
 ===============================
 
-Refrerence repository to accompany a future blog article.
+Reference repository to accompany a [blog article](http://www.sitepoint.com/demystifying-react-components-state/) on React components state and when to use them.
 
 ### Usage
 
